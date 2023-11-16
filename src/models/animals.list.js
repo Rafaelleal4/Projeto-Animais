@@ -7,7 +7,7 @@ getAllAnimals() {
     return this.animals;
 }
 
-getAnimalByID() {
+getAnimalByID(id) {
     return this.animals.
     find((animal) => animal.id === id);
 }

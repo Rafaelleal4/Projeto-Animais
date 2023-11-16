@@ -14,7 +14,8 @@ export const getAllAnimals = (req, res) => {
     }
     return res.status(200).send({
         message: `All animals from controller`,
-        status: `Okay`
+        status: `Okay`,
+        data: animals
     });
 };
 
@@ -34,15 +35,16 @@ export const getAnimalByID = (req, res) => {
 };
 
 export const createAnimals = (req, res) => {
-    const { nome, type, age, color, img, vacined } = req.body;
-    const animal = new Animal(nome, type, age, color, img, vacined)
+    const { name, type, age, color, img, vacined } = req.body;
 
-    if(!nome || !type || !age || !color || !img || !vacined) {
+    if(!name || !type || !age || !color || !img || !vacined) {
         return res.status(400).send({
             message: `Invalid data`,
             origem: `Controller`
         })
     }
+    const animal = new Animal(name, type, age, color, img, vacined)
+    list.createAnimals(animal);
     return res.status(201).send({
         message: `Animal created POST Route`,
         data: animal
@@ -51,9 +53,9 @@ export const createAnimals = (req, res) => {
 
 export const updateAnimalByID = (req, res) => {
     const {id} = req.params;
-    const { nome, type, age, color, img, vacined} = req.body;
+    const { name, type, age, color, img, vacined} = req.body;
 
-    if(!nome || !type || !age || !color || !img || !vacined) {
+    if(!name || !type || !age || !color || !img || !vacined) {
         return res.status(400).send({
             message: `Invalid data`,
             origem: `Controller`

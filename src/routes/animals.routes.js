@@ -12,12 +12,12 @@ const routeAnimals = Router();
 
 routeAnimals.get("/", getAllAnimals);
 
-routeAnimals.get("/", getAnimalByID);
+routeAnimals.get("/:id", getAnimalByID);
 
 routeAnimals.post("/", createAnimals);
 
-routeAnimals.put("/", updateAnimalByID);
+routeAnimals.put("/:id", updateAnimalByID);
 
-routeAnimals.delete("/", removeAnimalByID);
+routeAnimals.delete("/:id", removeAnimalByID);
 
 export default routeAnimals;
