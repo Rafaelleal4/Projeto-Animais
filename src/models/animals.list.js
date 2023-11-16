@@ -23,12 +23,12 @@ updateAnimalByID(id, name, type, age, color, img, vacined) {
         return null;
     }
 
-        this.name = name;
-        this.type = type;
-        this.age = age;
-        this.color = color;
-        this.img = img;
-        this.vacined = vacined;
+        animal.name = name;
+        animal.type = type;
+        animal.age = age;
+        animal.color = color;
+        animal.img = img;
+        animal.vacined = vacined;
 
         return animal
 }
